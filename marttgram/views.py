@@ -5,6 +5,7 @@ from django.http import HttpResponse, JsonResponse
 
 # Utilities
 from datetime import datetime
+import json
 
 
 def hello_word(request):
@@ -21,8 +22,19 @@ def get(request):
     import pdb #Debuger
     #pdb.set_trace() # Ieractua con la cosola
 
-    numbers = sorted(request.GET['numbers'].split(','))
-    response = JsonResponse([numbers], safe=False)
+    numbers = [int(number) for number in request.GET['numbers'].split(',')]
+    sorted_numbers = sorted(numbers)
+
+    data = {
+        'status' : 'ok',
+        'numbers' : sorted_numbers,
+        'message' : 'Integers sorted successfully',
+    }
+
+    response = HttpResponse(
+        json.dumps(data, indent=4),
+        content_type='aplication/json'
+    )
 
     return response
     

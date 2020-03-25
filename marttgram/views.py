@@ -17,7 +17,7 @@ def hello_word(request):
 
 
 def get(request):
-    """Using method GET"""
+    """Using method GET and response with a JSON"""
 
     import pdb #Debuger
     #pdb.set_trace() # Ieractua con la cosola
@@ -33,8 +33,17 @@ def get(request):
 
     response = HttpResponse(
         json.dumps(data, indent=4),
-        content_type='aplication/json'
+        content_type='application/json'
     )
 
     return response
+
+def check_point(response, name, age):
+    """Return a greeting"""
+    if age < 14:
+        message = 'Sorry {}, you aren\'t allowed here'.format(name)
+    else:
+        message = 'Hello, {} welcome to marttGram'.format(name)
+
+    return HttpResponse(message)
     

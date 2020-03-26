@@ -106,3 +106,7 @@ venv.bak/
 # Django
 db.sqlite3
 media/
+
+#Images
+*.jpg
+*.png

@@ -18,7 +18,7 @@ class Profile(models.Model):
     phone_number = models.CharField(max_length=20, blank=True)
 
     picture = models.ImageField(
-        upload_to='users/pictures', #Referencia a la direccion de almacenamiento, a donde las va a cagar
+        upload_to='users/pictures', 
         blank=True,
         null=True
     )

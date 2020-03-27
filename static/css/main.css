@@ -35,8 +35,8 @@ html, body {
     color: #f8f9fa;;
 }
 #profile-box {
-    background: #fff;
-    border: 1px solid rgba(0,0,0,.0975);
+    background: #2e293a;
+    border: 1px solid #71627a;
     border-radius: 1px;
     margin-top: 6em;
 }
@@ -47,4 +47,9 @@ html, body {
 
 #posts{
     margin-top: 75px;
+}
+
+.btn-submit{
+    background-color: #71627a;
+    color:#fff;
 }

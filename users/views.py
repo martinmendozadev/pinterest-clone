@@ -62,7 +62,16 @@ def signup_view(request):
 def update_profile(request):
     """Update Profile"""
 
-    return render(request, "users/update_profile.html")
+    profile = request.user.profile
+
+    return render(
+        request=request,
+        template_name="users/update_profile.html",
+        context={
+            'profile' : profile,
+            'user' : request.user
+        }
+        )
 
 
 @login_required

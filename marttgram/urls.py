@@ -9,16 +9,23 @@ from django.contrib import admin
 # Local
 from marttgram import views as local_views
 from posts import views as posts_views
+from users import views as users_views
 
 
 urlpatterns = [
 
+    # URLs Admin
     path('admin/', admin.site.urls),
 
-    path('hello_word/', local_views.hello_word),
-    path('get/', local_views.get),
-    path('check_point/<str:name>/<int:age>/', local_views.check_point),
+    # URLS Tests
+    path('hello_word/', local_views.hello_word, name='hello_word'),
+    path('get/', local_views.get, name='get'),
+    path('check_point/<str:name>/<int:age>/', local_views.check_point, name='check_pint'),
 
-    path('posts/', posts_views.list_posts),
+    # URLs Posts
+    path('posts/', posts_views.list_posts, name='feed',),
+
+    # URLs for users
+    path('users/login', users_views.login_view, name='login'),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

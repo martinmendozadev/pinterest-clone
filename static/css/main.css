@@ -13,7 +13,7 @@ html, body {
 }
 
 #main-navbar {
-    background: #111111;
+    background: #1e1e1e;
     border-bottom: 1px solid rgba(0,0,0,.0975);
 }
 
@@ -52,4 +52,8 @@ html, body {
 .btn-submit{
     background-color: #4d4d4d;
     color:#fff;
+}
+
+hr{
+    background-color: #4d4d4d;
 }

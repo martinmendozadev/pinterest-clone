@@ -18,12 +18,14 @@
                     {% csrf_token %}
 
                     {% if form.errors %}
-                        <p>{{ form.errors }}</p>
+                        <div class="alert alert-danger" role="alert">
+                            <p>{{ form.errors }}</p>
+                        </div>
                     {% endif %}
 
                     <div class="media">
                         {% if profile.picture %}
-                            <img src="{{ profile.picture.url }}" class="rounded-circle" height="50" />
+                            <img src="{{ profile.picture }}" class="rounded-circle" height="50" />
                         {% else %}
                             <img src="{% static 'images/default-profile.png' %}" class="rounded-circle" height="50" />
                         {% endif %}

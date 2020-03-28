@@ -55,7 +55,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 
     # Local
-    #'marttgram.middleware.ProfleCompleteMiddleware'
+    'marttgram.middleware.ProfleCompleteMiddleware'
 ]
 
 ROOT_URLCONF = 'marttgram.urls'

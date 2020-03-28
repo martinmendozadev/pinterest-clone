@@ -1,5 +1,5 @@
 html, body {
-    background: #3d354b;
+    background: #3c3c3c;
     height: 100%;
     width: 100%;
     font-family: 'Roboto', sans-serif;
@@ -7,24 +7,24 @@ html, body {
 }
 
 #auth-container {
-    background: #2e293a;
-    border: 1px solid #71627a;
+    background: #111111;
+    border: 1px solid #4d4d4d;
     border-radius: 1px;
 }
 
 #main-navbar {
-    background: #2e293a;
+    background: #111111;
     border-bottom: 1px solid rgba(0,0,0,.0975);
 }
 
 .post-container {
-    background: #2e293a;
-    border: 1px solid #71627a;
+    background: #111111;
+    border: 1px solid #4d4d4d;
     border-radius: 3px;
 }
 
 .nav-icon a {
-    color: #71627a;
+    color: #4d4d4d;
     font-size: 1.3em;
     display: block;
     margin-top: .2em;
@@ -35,8 +35,8 @@ html, body {
     color: #f8f9fa;;
 }
 #profile-box {
-    background: #2e293a;
-    border: 1px solid #71627a;
+    background: #111111;
+    border: 1px solid #4d4d4d;
     border-radius: 1px;
     margin-top: 6em;
 }
@@ -50,6 +50,6 @@ html, body {
 }
 
 .btn-submit{
-    background-color: #71627a;
+    background-color: #4d4d4d;
     color:#fff;
 }

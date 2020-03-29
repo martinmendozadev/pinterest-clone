@@ -7,9 +7,8 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.db.utils import IntegrityError
 
-# Local
-from users.models import Profile
-from users.forms import FormPpdateProfile
+# Forms
+from users.forms import FormPpdateProfile, SignupForm
 
 
 def login_view(request):
@@ -32,33 +31,20 @@ def login_view(request):
 
 
 def signup_view(request):
-    """Sign up view"""
-
+    """Sign up view."""
     if request.method == 'POST':
-        username = request.POST['username']
-        password = request.POST['passwd']
-        passwd_confirmation = request.POST['passwd_confirmation']
+        form = SignupForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('login')
+    else:
+        form = SignupForm()
 
-        if password != passwd_confirmation:
-            return render(request, "users/signup.html", {'error' : 'Passwords does not match'})
-
-        try:
-            user = User.objects.create_user(username=username, password=password)
-        except IntegrityError:
-            return render(request, "users/signup.html", {'error' : 'User already in use, try with other.'})
-
-        user.email = request.POST['email']
-        user.last_name = request.POST['last_name']
-        user.first_name = request.POST['first_name']
-        user.save()
-
-        profile = Profile(user=user)
-        profile.save()
-
-        return redirect('login')
-
-
-    return render(request, "users/signup.html")
+    return render(
+        request=request,
+        template_name='users/signup.html',
+        context={'form': form}
+    )
 
 
 @login_required

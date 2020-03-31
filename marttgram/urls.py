@@ -13,12 +13,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 
     # URLs Posts
-    #path('', include(('posts.urls', 'posts'), namespace='posts')),
-    
-    # URLs for users
-    #path('users/', include(('users.urls', 'users'), namespace='users')),
-
     path('', include(('posts.urls', 'posts'), namespace='posts')),
-    path('users/', include(('users.urls', 'users'), namespace='users')),
 
+    # URLs for users
+    path('users/', include(('users.urls', 'users'), namespace='users')),
+    
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

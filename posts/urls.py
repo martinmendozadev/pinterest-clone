@@ -11,7 +11,7 @@ urlpatterns = [
     path(
         route='',
         view=views.PostsFeedView.as_view(),
-        name='feed',
+        name='feed'
     ),
 
     path(

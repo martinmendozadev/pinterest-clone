@@ -90,7 +90,7 @@ def update_profile(request):
             profile.save()
 
             url = reverse('users:detail', kwargs={'username': request.user.username})
-            return redirect('users:detail') #Check
+            return redirect(url) #Check if its ok
     else:
         form = FormPpdateProfile()
 

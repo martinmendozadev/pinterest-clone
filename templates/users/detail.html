@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block head_content %}
-<title>@{{ user.username }} | Detail</title>
+<title>Detail user</title>
 {% endblock %}
 
 {% block container %}
@@ -19,7 +19,7 @@
 
             <div class="col-sm-8">
                 <h2 style="font-weight: 100;">
-                    {{ user.username }}
+                    @{{ user.username }}
                     {% if user == request.user %}
                         <a
                             href="{% url 'users:update' %}"

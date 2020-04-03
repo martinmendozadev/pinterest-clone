@@ -19,15 +19,18 @@ class PostsFeedView(LoginRequiredMixin, ListView):
     template_name = 'posts/feed.html'
     model = Post
     ordering = ('-created',)
-    paginate_by = 2
+    paginate_by = 10
     context_object_name = 'posts'
 
 
 class PostDetailView(LoginRequiredMixin, DetailView):
+    """Return a detail view about one post"""
+    
     template_name = 'posts/post_detail.html'
     slug_field = 'id'
     slug_url_kwarg = 'post_id'
     queryset = Post.objects.all()
+    context_object_name = 'post'
 
 
 @login_required

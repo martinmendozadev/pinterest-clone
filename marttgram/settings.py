@@ -20,12 +20,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'vb58y81m5%ls5jzv7snxe(#_v%pu+1i$j)==m205hh=d(m@%j$'
+SECRET_KEY = os.getenv('MARTT_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['3.84.116.226']
 
 
 # Application definition
@@ -86,8 +86,12 @@ WSGI_APPLICATION = 'marttgram.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.getenv('MARTT_DB_NAME'),
+        'USER': os.getenv('MARTT_DB_USER'),
+        'PASSWORD': os.getenv('MARTT_DB_PASSWORD'),
+        'HOST' : os.getenv('MARTT_DB_HOST'),
+        'PORT': os.getenv('MARTT_DB_PORT'),
     }
 }
 

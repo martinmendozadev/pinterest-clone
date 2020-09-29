@@ -4,7 +4,7 @@
     <div class="container">
 
         <a class="navbar-brand pr-5" style="border-right: 1px solid #efefef;" href="{% url 'posts:feed' %}">
-            <img src="{% static 'images/instagram.png' %}" height="45" class="d-inline-block align-top"/>
+            <img src="{% static 'images/master.png' %}" height="45" class="d-inline-block align-top"/>
         </a>
 
         <div class="collapse navbar-collapse">
@@ -34,5 +34,12 @@
 
             </ul>
         </div>
+
+    <div>
+        <form class="form-inline">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    </div>
     </div>
 </nav>

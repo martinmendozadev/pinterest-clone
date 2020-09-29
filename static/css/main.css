@@ -57,3 +57,11 @@ html, body {
 hr{
     background-color: #4d4d4d;
 }
+
+.card-columns{
+    margin-top: 100px;
+}
+
+.card, img {
+    border-radius: 30px;
+}

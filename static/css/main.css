@@ -65,3 +65,8 @@ hr{
 .card, img {
     border-radius: 30px;
 }
+#detail-post {
+    margin-top: 100px;
+}
+#info-post {
+}

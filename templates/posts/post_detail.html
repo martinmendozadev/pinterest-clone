@@ -7,9 +7,23 @@
 {% endblock %}
 
 {% block container %}
-    <div class="container">
-        <div class="row">
+    <div class="container row" id="detail-post">
+        <div class="col-6" id="image-post">
             {% include 'posts/post_card.html' %}
+        </div>
+        <div class="col-6" id="info-post">
+            <div class="card bg-secondary">
+                <div class="card-header">
+                    This is image header
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">{{ post.title }}</h5>
+                    <p class="card-text">{{ post.description }}</p>
+                </div>
+                <div class="card-footer">
+                    <a href="{% url 'users:detail' post.user.username %}" class="btn btn-primary">View user owner</a>
+                </div>
+            </div>
         </div>
     </div>
 {% endblock %}

@@ -1,3 +1,5 @@
 <div class="card  post-container">
+    <a href="{% url 'posts:post_detail' post.id %}">
         <img style="width: 100%;" src="{{ post.photo.url }}" alt="{{ post.title }}">
+    </a>
 </div>

@@ -18,7 +18,7 @@ class PostsFeedView(LoginRequiredMixin, ListView):
     template_name = 'posts/feed.html'
     model = Post
     ordering = ('-created',)
-    paginate_by = 10
+    paginate_by = 6
     context_object_name = 'posts'
 
 

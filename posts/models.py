@@ -8,12 +8,13 @@ from django.contrib.auth.models import User
 class Post(models.Model):
     """Post model."""
 
-    ##ForeignKey viene de User
+    # ForeignKey viene de User
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    #Para no importar Profile se puede usar un str
+    # Para no importar Profile se puede usar un str
     profile = models.ForeignKey('users.Profile', on_delete=models.CASCADE)
 
     title = models.CharField(max_length=255)
+    description = models.CharField(max_length=255)
     photo = models.ImageField(upload_to='posts/photos')
 
     created = models.DateTimeField(auto_now_add=True)
